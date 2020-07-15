@@ -17,40 +17,43 @@
 <script>
 export default {
   name: "HomeRecommend",
+  props: {
+    list:Array
+  },
   data: function(){
     return {
-      list: [
-        {
-          id:'001',
-          title:'AAAhahahhahhahahahahhahahahahahh',
-          desc:'哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或',
-          imgUrl:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1995235764,179833910&fm=26&gp=0.jpg'
-        },
-        {
-          id:'002',
-          title:'AAAhahahhahhahahahahhahahahahahh',
-          desc:'哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或',
-          imgUrl:'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg'
-        },
-        {
-          id:'003',
-          title:'AAAhahahhahhahahahahhahahahahahh',
-          desc:'哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或',
-          imgUrl:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1995235764,179833910&fm=26&gp=0.jpg'
-        },
-        {
-          id:'004',
-          title:'AAAhahahhahhahahahahhahahahahahh',
-          desc:'哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或',
-          imgUrl:'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg'
-        },
-        {
-          id:'005',
-          title:'AAAhahahhahhahahahahhahahahahahh',
-          desc:'哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或',
-          imgUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594826520535&di=df6c4190346b318050a09885c5bd7874&imgtype=0&src=http%3A%2F%2Fbos.pgzs.com%2Frbpiczy%2FWallpaper%2F2013%2F10%2F8%2F02404ff49fee4263ba88311605c47608.jpg'
-        },
-      ]
+      // list: [
+      //   {
+      //     id:'001',
+      //     title:'AAAhahahhahhahahahahhahahahahahh',
+      //     desc:'哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或',
+      //     imgUrl:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1995235764,179833910&fm=26&gp=0.jpg'
+      //   },
+      //   {
+      //     id:'002',
+      //     title:'AAAhahahhahhahahahahhahahahahahh',
+      //     desc:'哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或',
+      //     imgUrl:'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg'
+      //   },
+      //   {
+      //     id:'003',
+      //     title:'AAAhahahhahhahahahahhahahahahahh',
+      //     desc:'哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或',
+      //     imgUrl:'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1995235764,179833910&fm=26&gp=0.jpg'
+      //   },
+      //   {
+      //     id:'004',
+      //     title:'AAAhahahhahhahahahahhahahahahahh',
+      //     desc:'哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或',
+      //     imgUrl:'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg'
+      //   },
+      //   {
+      //     id:'005',
+      //     title:'AAAhahahhahhahahahahhahahahahahh',
+      //     desc:'哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或或',
+      //     imgUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1594826520535&di=df6c4190346b318050a09885c5bd7874&imgtype=0&src=http%3A%2F%2Fbos.pgzs.com%2Frbpiczy%2FWallpaper%2F2013%2F10%2F8%2F02404ff49fee4263ba88311605c47608.jpg'
+      //   },
+      // ]
     }
   }
 };

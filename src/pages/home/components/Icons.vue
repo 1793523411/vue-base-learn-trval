@@ -20,63 +20,66 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    list: Array
+  },
   data () {
   return {
     swiperOption: {
       autoplay: false
       },
-      list:[
-        {
-          id:'001',
-          imgUrl: 'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg',
-          desc: '淘宝哈哈哈我最帅'
-        },
-         {
-          id:'002',
-          imgUrl: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1995235764,179833910&fm=26&gp=0.jpg',
-          desc: '淘宝'
-        },
-         {
-          id:'003',
-          imgUrl: 'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg',
-          desc: '淘宝'
-        },
-         {
-          id:'004',
-          imgUrl: 'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg',
-          desc: '淘宝'
-        },
-          {
-          id:'005',
-          imgUrl: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1995235764,179833910&fm=26&gp=0.jpg',
-          desc: '淘宝'
-        },
-          {
-          id:'006',
-          imgUrl: 'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg',
-          desc: '淘宝'
-        },
-          {
-          id:'007',
-          imgUrl: 'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg',
-          desc: '淘宝'
-        },
-          {
-          id:'008',
-          imgUrl: 'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg',
-          desc: '淘宝'
-        },
-          {
-          id:'009',
-          imgUrl: 'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg',
-          desc: '淘宝'
-        },
-          {
-          id:'010',
-          imgUrl: 'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg',
-          desc: '淘宝'
-        },
-      ]
+      // list:[
+      //   {
+      //     id:'001',
+      //     imgUrl: 'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg',
+      //     desc: '淘宝哈哈哈我最帅'
+      //   },
+      //    {
+      //     id:'002',
+      //     imgUrl: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1995235764,179833910&fm=26&gp=0.jpg',
+      //     desc: '淘宝'
+      //   },
+      //    {
+      //     id:'003',
+      //     imgUrl: 'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg',
+      //     desc: '淘宝'
+      //   },
+      //    {
+      //     id:'004',
+      //     imgUrl: 'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg',
+      //     desc: '淘宝'
+      //   },
+      //     {
+      //     id:'005',
+      //     imgUrl: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1995235764,179833910&fm=26&gp=0.jpg',
+      //     desc: '淘宝'
+      //   },
+      //     {
+      //     id:'006',
+      //     imgUrl: 'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg',
+      //     desc: '淘宝'
+      //   },
+      //     {
+      //     id:'007',
+      //     imgUrl: 'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg',
+      //     desc: '淘宝'
+      //   },
+      //     {
+      //     id:'008',
+      //     imgUrl: 'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg',
+      //     desc: '淘宝'
+      //   },
+      //     {
+      //     id:'009',
+      //     imgUrl: 'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg',
+      //     desc: '淘宝'
+      //   },
+      //     {
+      //     id:'010',
+      //     imgUrl: 'http://gw.alicdn.com/tps/i3/TB1yeWeIFXXXXX5XFXXuAZJYXXX-210-210.png_50x50.jpg',
+      //     desc: '淘宝'
+      //   },
+      // ]
     }
   },
   computed: {
