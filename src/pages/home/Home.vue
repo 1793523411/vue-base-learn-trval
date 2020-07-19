@@ -1,6 +1,6 @@
 <template>
   <div>
-    <home-header :city="lastCity"></home-header>
+    <home-header></home-header>
     <home-swiper :list="swiperList"></home-swiper>
     <home-icons :list="iconList"></home-icons>
     <home-recommend :list="recommendList"></home-recommend>
@@ -52,7 +52,6 @@ export default {
   },
   mounted() {
     // console.log("mounted");
-    this.lastCity = "北京";
     this.getHomeInfo();
   }
 };
