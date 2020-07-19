@@ -20,90 +20,26 @@
         <div class="button-list">
           <div
             class="button-wrapper"
+            v-for="item of hot"
+            :key="item.id"
           >
-            <div class="button">河南</div>
-          </div>
-          <div
-            class="button-wrapper"
-          >
-            <div class="button">河南</div>
+            <div class="button">{{item.name}}</div>
           </div>
         </div>
       </div>
       <div
         class="area"
+        v-for="(item, key) of cities"
+        :key="key"
       >
-        <div class="title border-topbottom">哎哎哎</div>
+        <div class="title border-topbottom">{{key}}</div>
         <div class="item-list">
           <div
             class="item border-bottom"
+            v-for="innerItem of item"
+            :key="innerItem.id"
           >
-            美国
-          </div>
-          <div
-            class="item border-bottom"
-          >
-            美国
-          </div>
-          <div
-            class="item border-bottom"
-          >
-            美国
-          </div>
-          <div
-            class="item border-bottom"
-          >
-            美国
-          </div>
-          <div
-            class="item border-bottom"
-          >
-            美国
-          </div>
-          <div
-            class="item border-bottom"
-          >
-            美国
-          </div>
-          <div
-            class="item border-bottom"
-          >
-            美国
-          </div>
-          <div
-            class="item border-bottom"
-          >
-            美国
-          </div>
-          <div
-            class="item border-bottom"
-          >
-            美国
-          </div>
-          <div
-            class="item border-bottom"
-          >
-            美国
-          </div>
-          <div
-            class="item border-bottom"
-          >
-            美国
-          </div>
-          <div
-            class="item border-bottom"
-          >
-            美国
-          </div>
-          <div
-            class="item border-bottom"
-          >
-            美国
-          </div>
-          <div
-            class="item border-bottom"
-          >
-            美国
+            {{innerItem.name}}
           </div>
         </div>
       </div>
@@ -115,6 +51,10 @@
 import Bsroll from 'better-scroll'
 export default {
   name: 'CityList',
+  props: {
+    hot: Array,
+    cities: Object
+  },
   mounted(){
     this.scroll = new Bsroll(this.$refs.wrapper)
   }
