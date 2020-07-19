@@ -58,7 +58,35 @@
 ## 使用Vuex
 
 + 使用vuex管理城市，初步联调两个页面，city和首页，读取，修改store的公共数据实现联调，初步使用了Vuex
-+ 利用本地存储解决刷新数据改变为原始的数据，在store中使用localStorage来存储数据，同时为了避免用户禁止本地存储的功能，从而导致异常从而整个代码不能运行，要对本地存储的操作进行异常的捕获
++ 利用本地存储解决刷新数据改变为原始的数据(同步数据和异步数据，这里都是同步数据，没有action的必要)，在store中使用localStorage来存储数据，同时为了避免用户禁止本地存储的功能，从而导致异常从而整个代码不能运行，要对本地存储的操作进行异常的捕获
++ store目录下的index一般很复杂，所以需要讲state和mutations分开写入到不同的文件
++ vuex提供了`import {mapState, mapMutations} from 'vuex'`这种方法，可以更方便的进行数据获取，和修改数据
+
+```javascript
+  computed: {
+    ...mapState({
+      currentCity: 'city'
+    })
+  },
+  methods: {
+    handleCityClick(city){
+      // this.$store.dispatch('changeCity',city)
+      this.changeCity(city)
+      this.$router.push('/')
+    },
+    ...mapMutations(['changeCity'])
+  },
+```
++ vuex还提供了getter方法，这有点类似于计算属性,书写在代码里（学习使用，对项目代码无用），使用如下(与state使用类似)
+
+```javascript
+import {mapGetters} from 'vuex'
+
+computed: {
+  ...mapGetters(['doubleCity])
+}
+
+```
 
 > A Vue.js project
 
