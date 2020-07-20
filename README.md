@@ -120,7 +120,27 @@ computed: {
 <div v-on:click.self="doThat">...</div>
 ```
 + 详情页顶部banner渐隐渐现效果，和返回按钮返回首页，通过监听scroll计算opacity属性
++ 全局事件绑定会出现许多bug,应该进行解绑（多出来的active会在进入页面执行，也会增加一个deactivated离开页面执行，如果不解绑，任何页面都会触发该事件）
+```javascript
+  activated(){
+   window.addEventListener('scroll',this.handleScroll)
+  },
+  deactivated(){
+    window.removeEventListener('scroll',this.handleScroll)
+  }
+```
++ 然而代码中原来只这样写的，并不会达到正确的效果，因为离开页面后事件并没有解绑，bug依然存在
 
+```javascript
+  mounted() {
+    window.addEventListener('scroll',this.handleScroll)
+    // console.log('+++++')
+  },
+  unmounted(){
+    window.addEventListener('scroll',this.handleScroll)
+    // console.log('--------')
+  }
+```
 
 
 > A Vue.js project
