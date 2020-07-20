@@ -153,6 +153,34 @@ computed: {
 ```
 + 为banner的画廊增加渐隐渐现的效果，使用slot+transition
 
+## 联调
+
++ 修改config夹文件中的index.js,即可
+
+```javascript
+proxyTable: {
+      '/api': {
+        target: 'http://localhost:8080',
+        pathRewrite: {
+          '^/api': '/static/mock'
+        }
+      }
+    },
+```
+
++ 配置package.json的host：0.0.0.0这样可以通过本地ip地址访问，而不是只能通过localhost
++ `@touchstart.prevent="handleTouchStart"`可以解决手机上的小bug（滑动时整个屏幕跟着滚），通过阻止默认事件
++ 可以通过安装`babel-polyfill`解决低版本安卓手机不支持promise特性（白屏），会自动安装相关依赖
++ 打包上线，放到后端的根目录
++ 打包配置文件:assetsPublicPath可以设置后端的根目录
+
+```
+    // Paths
+    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsSubDirectory: 'static',
+    assetsPublicPath: '/',
+```
+
 
 > A Vue.js project
 
