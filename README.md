@@ -141,6 +141,16 @@ computed: {
     // console.log('--------')
   }
 ```
++ 递归组件实现层级菜单（组件的名字可以递归时用），数据要有父组件传过来，直接在子组件里写数据递归时会报错
++ 使用ajax获取数据，动态传递路由参数，发出请求
++ 由于vue-router使用keep-alive进行了缓存，所以动态路由不起作用，可以使用activated进行解决，也可以在在keep-alive标签上加： `<keep-alive exclude="Detail">`,name为组件中定义的name
++ 解决页面跳转视图停留位置的bug，页面跳转后总是没有回到顶部，所以在router中加入
+
+```javascript
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
+```
 
 
 > A Vue.js project
