@@ -96,6 +96,32 @@ computed: {
 
 + 制作顶部的banner，一张图片+一些文字，首先实现路由跳转，然后进行布局
 + 制作画廊组件，利用better-scroll，实现点击开启画廊，点击关闭画廊，进行css布局
++ 坑：子组件向父组件传递事件，会冒泡，导致只能打开，不能关闭，解决：在子组件点击处加.stop来阻止时间继续传递
+
+```
+<!-- 阻止单击事件继续传播 -->
+<a v-on:click.stop="doThis"></a>
+
+<!-- 提交事件不再重载页面 -->
+<form v-on:submit.prevent="onSubmit"></form>
+
+<!-- 修饰符可以串联 -->
+<a v-on:click.stop.prevent="doThat"></a>
+
+<!-- 只有修饰符 -->
+<form v-on:submit.prevent></form>
+
+<!-- 添加事件监听器时使用事件捕获模式 -->
+<!-- 即内部元素触发的事件先在此处理，然后才交由内部元素进行处理 -->
+<div v-on:click.capture="doThis">...</div>
+
+<!-- 只当在 event.target 是当前元素自身时触发处理函数 -->
+<!-- 即事件不是从内部元素触发的 -->
+<div v-on:click.self="doThat">...</div>
+```
+
+
+
 > A Vue.js project
 
 ## Build Setup
