@@ -10,11 +10,14 @@
            <span class="iconfont banner-icon">&#xe692;</span>
           {{this.bannerImgs.length}}
         </div>
+        <fade-animation>
          <common-gallary
             :imgs="bannerImgs"
             v-show="showGallary"
             @close="handleGallaryClose"
           ></common-gallary>
+        </fade-animation>
+
       </div>
     </div>
   </div>
@@ -22,10 +25,12 @@
 
 <script>
 import CommonGallary from 'common/gallary/Gallary'
+import FadeAnimation from 'common/fade/FadeAnimation'
 export default {
   name:'DetailBanner',
   components:{
-    CommonGallary
+    CommonGallary,
+    FadeAnimation
   },
     props: {
     sightName: String,

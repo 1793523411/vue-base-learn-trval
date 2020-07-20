@@ -151,6 +151,7 @@ computed: {
     return { x: 0, y: 0 }
   }
 ```
++ 为banner的画廊增加渐隐渐现的效果，使用slot+transition
 
 
 > A Vue.js project
