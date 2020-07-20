@@ -119,6 +119,7 @@ computed: {
 <!-- 即事件不是从内部元素触发的 -->
 <div v-on:click.self="doThat">...</div>
 ```
++ 详情页顶部banner渐隐渐现效果，和返回按钮返回首页，通过监听scroll计算opacity属性
 
 
 
